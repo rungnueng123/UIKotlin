@@ -1,7 +1,9 @@
 package com.rungnueng.com.uikotlin.Activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v4.view.ViewPager
 import android.support.v4.widget.DrawerLayout
@@ -17,12 +19,21 @@ import com.rungnueng.com.uikotlin.R
 import com.viewpagerindicator.CirclePageIndicator
 import java.util.*
 
+
+
 class DashboardActivity : AppCompatActivity() {
 
     private lateinit var mDrawerLayout: DrawerLayout
 
     private var imageModelArrayList: ArrayList<SlideImageModel>? = null
-    private val myImageList = intArrayOf(R.drawable.harley2, R.drawable.benz2, R.drawable.vecto, R.drawable.webshots, R.drawable.bikess, R.drawable.img1)
+    private val myImageList = intArrayOf(
+        R.drawable.harley2,
+        R.drawable.benz2,
+        R.drawable.vecto,
+        R.drawable.webshots,
+        R.drawable.bikess,
+        R.drawable.img1
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +49,40 @@ class DashboardActivity : AppCompatActivity() {
         )
         mDrawerLayout.addDrawerListener(toggle)
         toggle.syncState()
+
+        val navigationView: NavigationView = findViewById(R.id.nav_view)
+        navigationView.setNavigationItemSelectedListener { menuItem ->
+            // set item as selected to persist highlight
+            menuItem.isChecked = true
+            // close drawer when item is tapped
+            mDrawerLayout.closeDrawers()
+
+            // Add code here to update the UI based on the item selected
+            when (menuItem.itemId) {
+                R.id.nav_home -> {
+                    val intent = Intent(this,DashboardActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_shop -> {
+                    Toast.makeText(this, "shop", Toast.LENGTH_LONG).show()
+                    true
+                }
+                R.id.nav_cart -> {
+                    Toast.makeText(this, "cart", Toast.LENGTH_LONG).show()
+                    true
+                }
+                R.id.nav_about -> {
+                    Toast.makeText(this, "about", Toast.LENGTH_LONG).show()
+                    true
+                }
+                R.id.nav_feedback -> {
+                    Toast.makeText(this, "feedback", Toast.LENGTH_LONG).show()
+                    true
+                }
+            }
+
+            true
+        }
 
         imageModelArrayList = ArrayList()
         imageModelArrayList = populateList()
