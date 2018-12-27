@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
-        <item
-                android:id="@+id/nav_camera"
-                android:icon="@drawable/ic_cart"
-                android:title="@string/cart" />
-    </group>
+    <!--<group android:checkableBehavior="single">-->
+    <!--<item-->
+    <!--android:orderInCategory="0"-->
+    <!--android:id="@+id/nav_home"-->
+    <!--android:icon="@drawable/ic_home"-->
+    <!--android:title="@string/home" />-->
+    <!--<item-->
+    <!--android:orderInCategory="0"-->
+    <!--android:id="@+id/nav_shop"-->
+    <!--android:icon="@drawable/ic_shop"-->
+    <!--android:title="@string/shop" />-->
+    <!--<item-->
+    <!--android:orderInCategory="0"-->
+    <!--android:id="@+id/nav_camera"-->
+    <!--android:icon="@drawable/ic_cart"-->
+    <!--android:title="@string/cart" />-->
+    <!--</group>-->
+    <!--<group android:checkableBehavior="single">-->
+    <!--<item-->
+    <!--android:orderInCategory="1"-->
+    <!--android:id="@+id/nav_about"-->
+    <!--android:icon="@drawable/ic_about"-->
+    <!--android:title="@string/about" />-->
+    <!--</group>-->
+    <item android:title="my moves"
+          android:id="@+id/submenu_1">
+        <menu>
+            <item
+                    android:id="@+id/nav_home"
+                    android:icon="@drawable/ic_home"
+                    android:title="@string/home"/>
+            <item
+                    android:id="@+id/nav_shop"
+                    android:icon="@drawable/ic_shop"
+                    android:title="@string/shop"/>
+            <item
+                    android:id="@+id/nav_camera"
+                    android:icon="@drawable/ic_cart"
+                    android:title="@string/cart"/>
+        </menu>
+    </item>
+    <item android:title="opponent's moves"
+          android:id="@+id/submenu_2">
+        <menu>
+            <item
+                    android:id="@+id/nav_about"
+                    android:icon="@drawable/ic_about"
+                    android:title="@string/about"/>
+            <item
+                    android:id="@+id/nav_feedback"
+                    android:icon="@drawable/ic_feedback"
+                    android:title="@string/feedback"/>
+        </menu>
+    </item>
 </menu>
