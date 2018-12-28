@@ -64,8 +64,8 @@ class DashboardActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 R.id.nav_shop -> {
-                    Toast.makeText(this, "shop", Toast.LENGTH_LONG).show()
-                    true
+                    val intent = Intent(this,ShopActivity::class.java)
+                    startActivity(intent)
                 }
                 R.id.nav_cart -> {
                     Toast.makeText(this, "cart", Toast.LENGTH_LONG).show()
