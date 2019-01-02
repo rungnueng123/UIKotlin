@@ -68,8 +68,8 @@ class DashboardActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 R.id.nav_cart -> {
-                    Toast.makeText(this, "cart", Toast.LENGTH_LONG).show()
-                    true
+                    val intent = Intent(this,CartActivity::class.java)
+                    startActivity(intent)
                 }
                 R.id.nav_about -> {
                     Toast.makeText(this, "about", Toast.LENGTH_LONG).show()
@@ -167,8 +167,8 @@ class DashboardActivity : AppCompatActivity() {
         // Handle presses on the action bar menu items
         when (item.itemId) {
             R.id.action_cart -> {
-                Toast.makeText(this, "a", Toast.LENGTH_LONG).show()
-                return true
+                val intent = Intent(this,ShopActivity::class.java)
+                startActivity(intent)
             }
         }
         return super.onOptionsItemSelected(item)
